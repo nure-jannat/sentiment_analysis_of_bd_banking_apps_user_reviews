@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analysis App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .predict-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        .clear-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+        .result {
+            font-size: 22px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis (Bangla & English)</h1>
+    <form method="POST" action="/">
+        <textarea name="review" placeholder="Enter your review here..." id="reviewBox">{{ request.form.review or '' }}</textarea>
+        <br>
+        <button type="submit" class="btn predict-btn">Predict</button>
+        <button type="button" class="btn clear-btn" onclick="clearText()">Clear</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        Sentiment: {{ prediction }}
+        {% if prediction == 'Positive' %}
+            😄
+        {% elif prediction == 'Negative' %}
+            😞
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <script>
+        function clearText() {
+            document.getElementById("reviewBox").value = '';
+            const resultDiv = document.querySelector('.result');
+            if (resultDiv) {
+                resultDiv.innerHTML = '';
+            }
+        }
+    </script>
+</body>
+</html>
