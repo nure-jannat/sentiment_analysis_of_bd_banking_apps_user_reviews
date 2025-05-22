@@ -17,8 +17,9 @@ The dataset was collected through
 3. Stopword Removal
 4. Stemming 
 5. Language Detection
+
 Accuracy, Precision, Recall and F1-Score were used for evaluation of models. 
-## Model Training & Evaluation:
+## Model Training & Evaluation
 The following machine learning algorithms were applied:
 1. Naive Bayes
 2. Support Vector Machine (SVM)
@@ -26,8 +27,8 @@ The following machine learning algorithms were applied:
 4. Decision Tree
 5. Logistic Regression
    
-## Hyperparameter Tuning:
+## Hyperparameter Tuning
 Hyperparameter optimization was performed with GridSearchCV for Naive Bayes and Random Forest (Achieved the highest accuracy compared to other algorithms).
 
-## Results:
+## Results
 Naive Bayes achieved the highest accuracy among all the models tested.
