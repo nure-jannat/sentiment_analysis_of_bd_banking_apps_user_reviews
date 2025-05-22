@@ -17,7 +17,7 @@ The dataset was collected through
 3. Stopword Removal
 4. Stemming 
 5. Language Detection
-
+Accuracy, Precision, Recall and F1-Score were used for evaluation of models. 
 ## Model Training & Evaluation:
 The following machine learning algorithms were applied:
 1. Naive Bayes
